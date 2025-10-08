@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Prepare build dir",
+      "type": "shell",
+      "command": "mkdir -p build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build: built-in test (main.cpp)",
+      "type": "shell",
+      "command": "/usr/bin/nvcc",
+      "args": [
+        "-std=c++17",
+        "-O3",
+        "-arch=sm_86",
+        "--extended-lambda",
+        "-ccbin=/usr/bin/g++-10",
+        "-Xcompiler=-fopenmp",
+        "main.cpp",
+        "lbvh.cu",
+        "-o",
+        "build/kittenlbvh_test"
+      ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "problemMatcher": [],
+      "dependsOn": ["Prepare build dir"]
+    }
+  ]
+}

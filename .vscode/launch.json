@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run built-in test",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/kittenlbvh_test",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "console": "integratedTerminal"
+    }
+  ]
+}
